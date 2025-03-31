@@ -6,13 +6,21 @@ import { globalStyles } from '../styles/globalStyles';
 
 export default function JobDetailsScreen({ route }) {
   const { job } = route.params;
-  const [bookmarked, setBookmarked] = useState(isBookmarked(job.id));
+  const [bookmarked, setBookmarked] = useState(false);
 
-  const toggleBookmark = () => {
+  useEffect(() => {
+    const checkBookmark = async () => {
+      const isMarked = await isBookmarked(job.id);
+      setBookmarked(isMarked);
+    };
+    checkBookmark();
+  }, [job.id]);
+
+  const toggleBookmark = async () => {
     if (bookmarked) {
-      removeBookmark(job.id);
+      await removeBookmark(job.id);
     } else {
-      saveBookmark(job);
+      await saveBookmark(job);
     }
     setBookmarked(!bookmarked);
   };
