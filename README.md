@@ -35,5 +35,17 @@ JobApp is a React Native application built with Expo, designed for Android and i
 2. Install dependencies: `npm install`
 3. Run the app: `npx expo start`
 
+# Folder Structure
+JobApp/
+│── src/
+│   ├── components/       # Reusable UI components
+│   ├── screens/          # Screens for Jobs, Bookmarks, Job Details
+│   ├── context/          # Context API for state management
+│   ├── styles/           # Global styles
+│   ├── utils/            # Utility functions (e.g., AsyncStorage)
+│── App.js                # Main entry file
+│── package.json          # Dependencies and scripts
+│── README.md             # Project documentation
+
 ## Video Demo
 [[Link to video demo](#)](https://drive.google.com/file/d/16nVF6RoP47KiMxVKdqHLGtA_pGZeAfjQ/view?usp=sharing)
